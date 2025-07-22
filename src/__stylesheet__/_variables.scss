@@ -1,0 +1,20 @@
+$p: 6.33vmax;
+$p_md: 7vmax;
+$p_base: 5vmax;
+$p_base_inverse: 15vmax 10vmax;
+$p_sm: 2vmax;
+$p_sm_inverse: 13vmax 0;
+$p_zero: 0;
+
+// Typography
+$font-primary:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+$font-secondary: 'JetBrains Mono', 'Fira Code', monospace;
+$font-display: 'Playfair Display', 'Times New Roman', serif;
+
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;

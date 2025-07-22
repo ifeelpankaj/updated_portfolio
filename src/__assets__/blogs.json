@@ -1,0 +1,87 @@
+[
+    {
+        "icon": "code",
+        "title": "DSA Development",
+        "description": "Dive deep into Data Structures and Algorithms with comprehensive guides",
+        "blogs": [
+            {
+                "title": "Data Types and Array Fundamentals",
+                "excerpt": "Master the building blocks of programming with arrays and basic data types",
+                "link": "https://datatype.hashnode.dev/series/dsa"
+            },
+            {
+                "title": "Data Types and Array Fundamentals",
+                "excerpt": "Master the building blocks of programming with arrays and basic data types",
+                "link": "https://datatype.hashnode.dev/series/dsa"
+            },
+            {
+                "title": "Data Types and Array Fundamentals",
+                "excerpt": "Master the building blocks of programming with arrays and basic data types",
+                "link": "https://datatype.hashnode.dev/series/dsa"
+            },
+            {
+                "title": "Data Types and Array Fundamentals",
+                "excerpt": "Master the building blocks of programming with arrays and basic data types",
+                "link": "https://datatype.hashnode.dev/series/dsa"
+            },
+            {
+                "title": "Hashing Techniques Mastery",
+                "excerpt": "Unlock the power of hash tables and advanced hashing strategies",
+                "link": "https://datatype.hashnode.dev/hash-array"
+            },
+            {
+                "title": "Number Theory & Games",
+                "excerpt": "Explore mathematical concepts through competitive programming challenges",
+                "link": "https://datatype.hashnode.dev/series/number-game"
+            }
+        ]
+    },
+    {
+        "icon": "cloud",
+        "title": "DevOps Insights",
+        "description": "Modern infrastructure automation and deployment strategies for scalable applications",
+        "blogs": [
+            {
+                "title": "Git & GitHub Mastery",
+                "excerpt": "Advanced version control workflows and collaboration techniques",
+                "link": "https://medium.com/@itsmepankaj/list/git-github-ebcea9ade2de"
+            },
+            {
+                "title": "CI/CD Pipeline Architecture",
+                "excerpt": "Build robust automated deployment pipelines from scratch",
+                "link": "https://github.com/ifeelpankaj/Pipelining/blob/main/README.md"
+            }
+        ]
+    },
+    {
+        "icon": "database",
+        "title": "System Design",
+        "description": "Architectural patterns and scalable solutions for enterprise applications",
+        "blogs": [
+            {
+                "title": "Microservices Architecture",
+                "excerpt": "Working on it..."
+            },
+            {
+                "title": "Database Scaling Strategies",
+                "excerpt": "Working on it..."
+            }
+        ]
+    },
+    {
+        "icon": "book-open",
+        "title": "Tech Innovations",
+        "description": "Latest trends, tools, and technological insights shaping the future",
+        "blogs": [
+            {
+                "title": "AWS EC2 & Jenkins Integration",
+                "excerpt": "Complete guide to setting up cloud-based continuous integration",
+                "link": "https://datatype.hashnode.dev/series/devops"
+            },
+            {
+                "title": "Container Orchestration",
+                "excerpt": "Working on it..."
+            }
+        ]
+    }
+]

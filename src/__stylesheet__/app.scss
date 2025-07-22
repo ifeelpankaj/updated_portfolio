@@ -1,0 +1,29 @@
+@import 'home';
+@import 'header';
+@import 'project';
+@import 'experience';
+@import 'experiments';
+@import 'contact';
+@import 'blogs';
+@import 'footer';
+@import 'mediaquery';
+@import 'theme';
+
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: $font-primary;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}

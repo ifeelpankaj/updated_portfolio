@@ -1,0 +1,477 @@
+@import 'variables';
+
+// Blogs Section Styles
+.my_blogs_showcase {
+    padding: $p_md 0;
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+
+    // Subtle background pattern
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.02) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.02) 0%, transparent 50%);
+        pointer-events: none;
+    }
+}
+
+.my_blogs_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $p_sm;
+    position: relative;
+    z-index: 2;
+
+    // Main title
+    > h1 {
+        font-family: $font-display;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: $p_base;
+        position: relative;
+
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 40%, var(--gold) 80%, var(--text-primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gold), var(--gradient-end));
+            border-radius: 2px;
+            box-shadow: 0 0 20px var(--shadow);
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-bottom: calc($p_base * 0.8);
+
+            &::after {
+                width: 80px;
+                height: 3px;
+            }
+        }
+    }
+}
+
+.my_blogs_categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    height: 120vh;
+    margin-top: $p_base;
+
+    @media (max-width: $mobile-breakpoint) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        height: 210vh;
+        margin-top: calc($p_base * 0.8);
+    }
+}
+
+.my_blogs_category {
+    display: flex;
+    flex-direction: column;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    backdrop-filter: blur(10px);
+    height: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gold) 50%, var(--gradient-end) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow:
+            0 16px 32px var(--shadow),
+            0 8px 16px rgba(0, 0, 0, 0.2);
+
+        &::before {
+            opacity: 1;
+        }
+
+        .my_blogs_category_header .my_blogs_category_title span {
+            color: var(--accent);
+        }
+    }
+
+    // Open state styling
+    &:has(.my_blogs_category_blogs) {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.my_blogs_category_header {
+    flex-shrink: 0;
+    z-index: 2;
+    padding: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 212, 255, 0.02);
+    }
+
+    .my_blogs_category_title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        svg {
+            font-size: 1.8rem;
+            padding: 0.5rem;
+            background: var(--primary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        span {
+            font-family: $font-primary;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+    }
+
+    .my_blogs_expand_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: var(--primary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
+
+        svg {
+            font-size: 1rem;
+        }
+
+        &:hover {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 1.5rem;
+
+        .my_blogs_category_title {
+            gap: 0.8rem;
+
+            svg {
+                font-size: 1.5rem;
+                padding: 0.4rem;
+            }
+
+            span {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+.my_blogs_category_blogs {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    border-top: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+    max-height: calc(60vh - 5.8rem);
+
+    .my_blogs_category_description {
+        font-family: $font-primary;
+        font-size: 1rem;
+        color: var(--text-secondary);
+        font-style: italic;
+        padding: 1.5rem 1.8rem 1rem;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        @media (max-width: $mobile-breakpoint) {
+            padding: 1.2rem 1.5rem 0.8rem;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* Elegant Scrollbar Styling */
+.my_blogs_category_blogs::-webkit-scrollbar {
+    width: 6px;
+}
+
+.my_blogs_category_blogs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.my_blogs_category_blogs::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background 0.3s ease;
+}
+
+.my_blogs_category_blogs::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+/* Firefox Scrollbar */
+.my_blogs_category_blogs {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+.my_blogs_blog_item {
+    padding: 1.5rem 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+        background: rgba(0, 212, 255, 0.03);
+
+        h3 {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        a {
+            color: var(--gold);
+
+            &::after {
+                transform: translateX(4px);
+            }
+        }
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    h3 {
+        font-family: $font-primary;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0 0 0.8rem;
+        transition: all 0.3s ease;
+        line-height: 1.4;
+    }
+
+    p {
+        font-family: $font-primary;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin: 0 0 1rem;
+        line-height: 1.5;
+
+        // Handle "Working on it..." text
+        &:empty::after {
+            content: 'Coming soon...';
+            font-style: italic;
+            color: var(--gold);
+        }
+    }
+
+    a {
+        font-family: $font-primary;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        &::after {
+            content: '→';
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        &:hover::before {
+            width: calc(100% - 1.5rem);
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 1.2rem 1.5rem;
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.85rem;
+        }
+
+        a {
+            font-size: 0.85rem;
+        }
+    }
+}
+
+// Special styling for empty/coming soon blogs
+.my_blogs_blog_item:has(p:empty) {
+    opacity: 0.7;
+
+    h3 {
+        color: var(--text-secondary);
+    }
+
+    a {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+.my_blogs_coming_soon {
+    font-style: italic;
+    color: var(--gold);
+}
+
+// Responsive adjustments
+@media (max-width: $tablet-breakpoint) {
+    .my_blogs_showcase {
+        padding: $p_base 0;
+    }
+
+    .my_blogs_categories {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .my_blogs_showcase {
+        padding: $p_sm 0;
+    }
+
+    .my_blogs_container {
+        padding: 0 calc($p_sm * 0.8);
+    }
+}
+
+// Animation enhancements
+.my_blogs_category {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.15}s;
+        }
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+// @import 'variables'; // Ensure your variables are imported or available globally
+
+.loader-container {
+    padding: $p_sm;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Loader Inner Wrapper
+.loader {
+    display: flex;
+    justify-content: space-between;
+    width: calc(3 * var(--dot-size) + 2 * #{$p_sm});
+}
+
+// Loader Dot Animation
+.loader-dot {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--shadow);
+    animation: bounce 1.4s infinite ease-in-out both;
+
+    &:nth-child(1) {
+        animation-delay: -0.32s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: -0.16s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 0s;
+    }
+}
+
+// Bouncing Keyframes
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}

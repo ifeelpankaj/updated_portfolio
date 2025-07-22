@@ -1,0 +1,391 @@
+@import 'variables';
+
+// Footer Styles
+.footer_container {
+    position: relative;
+    background: var(--primary);
+    padding: $p_md 0 $p_sm;
+    border-top: 1px solid var(--border);
+    overflow: hidden;
+
+    // Decorative background elements
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+            90deg,
+            var(--gradient-start) 0%,
+            var(--gold) 25%,
+            var(--gradient-end) 50%,
+            var(--gold) 75%,
+            var(--gradient-start) 100%
+        );
+        animation: shimmer 3s ease-in-out infinite;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    // Profile section
+    .footer_profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: $p_base;
+        position: relative;
+        z-index: 2;
+
+        @media (min-width: $tablet-breakpoint) {
+            margin-bottom: $p_md;
+        }
+
+        // Profile image
+        .footer_profile_image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--border);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 0 0 var(--accent);
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+
+            &:hover {
+                transform: scale(1.1) rotate(3deg);
+                border-color: var(--accent);
+                box-shadow:
+                    0 12px 48px rgba(0, 0, 0, 0.4),
+                    0 0 40px var(--shadow);
+            }
+
+            @media (max-width: $mobile-breakpoint) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        // Name
+        .footer_profile_name {
+            font-family: $font-display;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 2px;
+                background: linear-gradient(90deg, var(--accent), var(--gold));
+                border-radius: 1px;
+                opacity: 0.8;
+            }
+        }
+
+        // Quote
+        .footer_profile_quote {
+            font-family: $font-primary;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-secondary);
+            font-style: italic;
+            max-width: 500px;
+            line-height: 1.6;
+            position: relative;
+            padding: 0 2rem;
+
+            &::before,
+            &::after {
+                content: '"';
+                font-family: $font-display;
+                font-size: 2rem;
+                color: var(--accent);
+                position: absolute;
+                opacity: 0.6;
+            }
+
+            &::before {
+                top: -0.5rem;
+                left: 0;
+            }
+
+            &::after {
+                bottom: -1rem;
+                right: 0;
+            }
+
+            @media (max-width: $mobile-breakpoint) {
+                padding: 0 1rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    // Connect section
+    .footer_connect {
+        text-align: center;
+        margin-bottom: $p_sm;
+        position: relative;
+        z-index: 2;
+
+        .footer_connect_title {
+            font-family: $font-primary;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 1px;
+                background: var(--accent);
+            }
+        }
+
+        .footer_social_links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+
+            @media (max-width: $mobile-breakpoint) {
+                gap: 1rem;
+            }
+
+            .footer_social_link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                background: var(--secondary);
+                border: 2px solid var(--border);
+                border-radius: 50%;
+                color: var(--text-secondary);
+                font-size: 1.5rem;
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, var(--accent), var(--gold));
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    border-radius: 50%;
+                }
+
+                svg {
+                    position: relative;
+                    z-index: 2;
+                    transition: all 0.3s ease;
+                }
+
+                &:hover {
+                    transform: translateY(-8px) scale(1.1);
+                    border-color: var(--accent);
+                    box-shadow:
+                        0 12px 24px var(--shadow),
+                        0 0 30px rgba(0, 212, 255, 0.2);
+
+                    &::before {
+                        opacity: 0.15;
+                    }
+
+                    svg {
+                        color: var(--accent);
+                        transform: scale(1.2) rotate(5deg);
+                    }
+                }
+
+                &:nth-child(1):hover svg {
+                    color: #0077b5;
+                } // LinkedIn
+                &:nth-child(2):hover svg {
+                    color: #e4405f;
+                } // Instagram
+                &:nth-child(3):hover svg {
+                    color: #333;
+                } // GitHub
+
+                @media (max-width: $mobile-breakpoint) {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    // Scroll to top button
+    .footer_scroll_top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 56px;
+        height: 56px;
+        background: var(--accent);
+        color: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow:
+            0 8px 24px var(--shadow),
+            0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        border: 2px solid transparent;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            transform: translateY(-4px) scale(1.1);
+            background: var(--accent-hover);
+            box-shadow:
+                0 12px 32px var(--shadow),
+                0 6px 12px rgba(0, 0, 0, 0.4);
+
+            &::before {
+                opacity: 1;
+            }
+
+            svg {
+                transform: translateY(-2px);
+                animation: bounce 0.6s ease;
+            }
+        }
+
+        &:active {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 48px;
+            height: 48px;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Animations
+@keyframes shimmer {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 0 var(--accent);
+    }
+    70% {
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 10px rgba(0, 212, 255, 0);
+    }
+    100% {
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 0 rgba(0, 212, 255, 0);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(-2px);
+    }
+    40% {
+        transform: translateY(-6px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+// Responsive adjustments
+@media (max-width: $tablet-breakpoint) {
+    .footer_container {
+        padding: $p_base 0 $p_sm;
+
+        .footer_profile {
+            margin-bottom: $p_sm;
+        }
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .footer_container {
+        padding: $p_sm 0;
+
+        .footer_profile {
+            margin-bottom: calc($p_sm * 0.8);
+        }
+
+        .footer_connect {
+            margin-bottom: calc($p_sm * 0.8);
+        }
+    }
+}

@@ -1,0 +1,548 @@
+// Import your variables
+@import 'variables';
+
+// Animation keyframes
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes glow {
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--shadow);
+    }
+    50% {
+        box-shadow:
+            0 0 40px var(--shadow),
+            0 0 60px var(--shadow);
+    }
+}
+
+// ==============================================
+// EXPERIENCE SECTION - MODERN CARD GRID
+// ==============================================
+
+.exp_timeline-wrapper {
+    padding: $p_md 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+
+    // Background pattern
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: $p_base 1.5rem;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: $p_sm 1rem;
+    }
+}
+
+.exp_timeline-title {
+    text-align: center;
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--gold));
+        border-radius: 2px;
+        animation: shimmer 2s infinite;
+    }
+}
+
+.exp_timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    position: relative;
+
+    @media (max-width: $mobile-breakpoint) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.exp_timeline-item {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.2}s;
+        }
+    }
+
+    &:hover .exp_content {
+        transform: translateY(-10px) rotateX(5deg);
+        box-shadow:
+            0 30px 60px var(--shadow),
+            0 0 0 1px var(--accent);
+
+        &::before {
+            opacity: 1;
+        }
+
+        .exp_year-badge {
+            transform: scale(1.1);
+            animation: glow 1.5s infinite;
+        }
+
+        .exp_company {
+            background-size: 200% 200%;
+            animation: shimmer 1.5s ease-in-out;
+        }
+    }
+}
+
+.exp_content {
+    // background: linear-gradient(145deg, var(--secondary), rgba(26, 26, 26, 0.8));
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    position: relative;
+    backdrop-filter: blur(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    // Animated gradient overlay
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 215, 0, 0.05) 50%, rgba(0, 102, 204, 0.1) 100%);
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    // Floating elements
+    &::after {
+        content: '{ }';
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-family: $font-secondary;
+        font-size: 1.5rem;
+        color: var(--accent);
+        opacity: 0.3;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    h3 {
+        // Year badge with unique styling
+        font-family: $font-secondary;
+        font-size: 0.85rem;
+        color: var(--primary);
+        font-weight: 700;
+        margin: 0 0 1.5rem 0;
+        padding: 0.7rem 1.5rem;
+        background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+        border-radius: 50px;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    h4 {
+        // Company name with gradient text
+        font-family: $font-display;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 800;
+        margin: 0 0 0.5rem 0;
+        background: linear-gradient(135deg, var(--text-primary), var(--accent), var(--gold));
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            transition: width 0.5s ease;
+        }
+
+        .exp_content:hover & {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    h5 {
+        // Role with modern styling
+        font-family: $font-primary;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gold);
+        margin: 0 0 2rem 0;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &::before {
+            content: '→';
+            margin-right: 0.5rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+
+        li {
+            font-family: $font-primary;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 2rem;
+            transition: all 0.3s ease;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.7rem;
+                width: 12px;
+                height: 12px;
+                background: linear-gradient(135deg, var(--accent), var(--gold));
+                border-radius: 50%;
+                transform: scale(0.8);
+                transition: all 0.3s ease;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 4px;
+                top: 1.1rem;
+                width: 4px;
+                height: 4px;
+                background: var(--primary);
+                border-radius: 50%;
+            }
+
+            &:hover {
+                color: var(--text-primary);
+                transform: translateX(5px);
+
+                &::before {
+                    transform: scale(1.2);
+                    box-shadow: 0 0 10px var(--accent);
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 2rem;
+        border-radius: 20px;
+
+        h3 {
+            font-size: 0.75rem;
+            padding: 0.6rem 1.2rem;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+        }
+
+        h5 {
+            font-size: 1rem;
+        }
+
+        ul li {
+            font-size: 0.9rem;
+            padding-left: 1.5rem;
+        }
+    }
+}
+
+// ==============================================
+// RESUME SECTION - COMPACT & ELEGANT
+// ==============================================
+
+.resume-section {
+    padding: 3rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--primary);
+    text-align: center;
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 2rem 1rem;
+    }
+}
+
+.resume-container {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.03), rgba(255, 215, 0, 0.03));
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        border-color: var(--accent);
+        box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+
+        &::before {
+            opacity: 1;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--accent-hover), var(--gold));
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.resume-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .resume-icon {
+        font-size: 1.8rem;
+        color: var(--accent);
+    }
+
+    .resume-title {
+        font-family: $font-display;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+    }
+}
+
+.resume-description {
+    font-family: $font-primary;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $font-primary;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    .btn-icon {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        .btn-icon {
+            transform: translateY(-1px);
+        }
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+// Enhanced responsive design
+@media (max-width: $mobile-breakpoint) {
+    .resume-container {
+        padding: 1.5rem;
+        border-radius: 12px;
+
+        .resume-header {
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            .resume-title {
+                font-size: 1.3rem;
+            }
+
+            .resume-icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        .resume-description {
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .download-btn {
+            font-size: 0.85rem;
+            padding: 0.7rem 1.5rem;
+        }
+    }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+// Print styles
+@media print {
+    .exp_timeline-wrapper,
+    .resume-section {
+        background: white !important;
+        color: black !important;
+
+        * {
+            background: transparent !important;
+            color: black !important;
+            box-shadow: none !important;
+        }
+    }
+}
