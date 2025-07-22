@@ -4,36 +4,36 @@
         "title": "DSA Development",
         "description": "Dive deep into Data Structures and Algorithms with comprehensive guides",
         "blogs": [
-            {
-                "title": "Data Types and Array Fundamentals",
-                "excerpt": "Master the building blocks of programming with arrays and basic data types",
-                "link": "https://datatype.hashnode.dev/series/dsa"
-            },
-            {
-                "title": "Data Types and Array Fundamentals",
-                "excerpt": "Master the building blocks of programming with arrays and basic data types",
-                "link": "https://datatype.hashnode.dev/series/dsa"
-            },
-            {
-                "title": "Data Types and Array Fundamentals",
-                "excerpt": "Master the building blocks of programming with arrays and basic data types",
-                "link": "https://datatype.hashnode.dev/series/dsa"
-            },
-            {
-                "title": "Data Types and Array Fundamentals",
-                "excerpt": "Master the building blocks of programming with arrays and basic data types",
-                "link": "https://datatype.hashnode.dev/series/dsa"
-            },
-            {
-                "title": "Hashing Techniques Mastery",
-                "excerpt": "Unlock the power of hash tables and advanced hashing strategies",
-                "link": "https://datatype.hashnode.dev/hash-array"
-            },
-            {
-                "title": "Number Theory & Games",
-                "excerpt": "Explore mathematical concepts through competitive programming challenges",
-                "link": "https://datatype.hashnode.dev/series/number-game"
-            }
+             {
+            "title": "Essential Math for Programmers",
+            "excerpt": "Learn the foundational math concepts every programmer should know.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/basicMaths/a-z_guide_me.md"
+        },
+        {
+            "title": "Understanding Array Fundamentals",
+            "excerpt": "A beginner-friendly guide to arrays, their operations, and use cases.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/basicArr.md"
+        },
+        {
+            "title": "Dutch National Flag Algorithm Explained",
+            "excerpt": "Step-by-step breakdown of the Dutch National Flag problem and its solution.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/dutchNationFlagAlgo.md"
+        },
+        {
+            "title": "Kadane's Algorithm: Maximum Subarray Sum",
+            "excerpt": "Discover how Kadane's Algorithm efficiently finds the largest sum subarray.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/kadaneAlgo.md"
+        },
+        {
+            "title": "Finding the Longest Consecutive Subsequence",
+            "excerpt": "Unlock the power of hash tables to solve the longest consecutive sequence problem.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/longestCons.md"
+        },
+        {
+            "title": "Majority Element I: Efficient Solutions",
+            "excerpt": "Explore optimal approaches to finding the majority element in an array.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/majorityElement.md"
+        }
         ]
     },
     {
