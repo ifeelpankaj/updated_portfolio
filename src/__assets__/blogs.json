@@ -33,6 +33,11 @@
             "title": "Majority Element I: Efficient Solutions",
             "excerpt": "Explore optimal approaches to finding the majority element in an array.",
             "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/majorityElement.md"
+        },
+        {
+            "title": "Maximum Consecutive Ones",
+            "excerpt": "Learn how to efficiently find the Kth largest element in an unsorted array.",
+            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/maxConOne.md"
         }
         ]
     },
