@@ -2,19 +2,16 @@ import npmPackageGif from '../__assets__/Project001.gif';
 import setupGif from '../__assets__/How.png';
 import StylishLoader from '../__components__/loader.jsx';
 import InfiniteCountdown from '../__components__/__countdown.jsx';
+import suduko from '../__assets__/sudoku.png';
 
 const experimentsData = [
     {
-        title: 'Custom Loader',
-        description: 'A visually engaging loader animation for web apps with smooth transitions and modern design.',
-        component: (
-            <StylishLoader
-                size="large"
-                color="#00d4ff"
-            />
-        ),
-        link: 'https://codepen.io/ifeelpankaj/pen/WbeeKrM'
+        title: 'Sudoku Solver',
+        description: 'A web-based Sudoku solver that efficiently finds solutions for any valid Sudoku puzzle.',
+        gif: suduko,
+        link: 'https://sudoku-solver-dlmb.vercel.app/'
     },
+
     {
         title: 'Frontend Setup',
         description: 'A robust initial setup for React projects with modern tooling and best practices.',
@@ -32,6 +29,17 @@ const experimentsData = [
         description: 'Interactive countdown component with elegant animations and responsive design.',
         component: <InfiniteCountdown />,
         link: 'https://codepen.io/ifeelpankaj/pen/GgKKBKj'
+    },
+    {
+        title: 'Custom Loader',
+        description: 'A visually engaging loader animation for web apps with smooth transitions and modern design.',
+        component: (
+            <StylishLoader
+                size="large"
+                color="#00d4ff"
+            />
+        ),
+        link: 'https://codepen.io/ifeelpankaj/pen/WbeeKrM'
     }
 ];
 

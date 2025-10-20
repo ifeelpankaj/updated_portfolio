@@ -4,16 +4,16 @@
         "title": "DSA Development",
         "description": "Dive deep into Data Structures and Algorithms with comprehensive guides",
         "blogs": [
-             {
-            "title": "Essential Math for Programmers",
-            "excerpt": "Learn the foundational math concepts every programmer should know.",
-            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/basicMaths/a-z_guide_me.md"
-        },
-        {
-            "title": "Array Problems & Solutions",
-            "excerpt": "Explore a wide range of array problems with clear explanations and code examples.",
-            "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/a-z_guide.md"
-        }
+            {
+                "title": "Essential Math for Programmers",
+                "excerpt": "Learn the foundational math concepts every programmer should know.",
+                "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/basicMaths/a-z_guide_me.md"
+            },
+            {
+                "title": "Array Problems & Solutions",
+                "excerpt": "Explore a wide range of array problems with clear explanations and code examples.",
+                "link": "https://github.com/Myself-Pankaj/DSA-NOTES/blob/master/array/a-z_guide.md"
+            }
         ]
     },
     {
@@ -49,20 +49,20 @@
         ]
     },
     {
-    "icon": "book-open",
-    "title": "Tech Innovations & More",
-    "description": "Explore the latest trends, tools, and insights shaping the future of technology.",
-    "blogs": [
-        {
-            "title": "Integrating AWS EC2 with Jenkins for CI/CD",
-            "excerpt": "A practical guide to automating cloud-based continuous integration and deployment using AWS EC2 and Jenkins.",
-            "link": "https://datatype.hashnode.dev/series/devops"
-        },
-        {
-            "title": "Managing Multiple GitHub Accounts on One Computer",
-            "excerpt": "Step-by-step instructions for configuring and switching between multiple GitHub accounts on a single machine.",
-            "link": "https://github.com/Myself-Pankaj/Tech_Blogs/blob/master/Managing_Github_Account's.md"
-        }
-    ]
-}
+        "icon": "book-open",
+        "title": "Tech Innovations & More",
+        "description": "Explore the latest trends, tools, and insights shaping the future of technology.",
+        "blogs": [
+            {
+                "title": "Integrating AWS EC2 with Jenkins for CI/CD",
+                "excerpt": "A practical guide to automating cloud-based continuous integration and deployment using AWS EC2 and Jenkins.",
+                "link": "https://datatype.hashnode.dev/series/devops"
+            },
+            {
+                "title": "Managing Multiple GitHub Accounts on One Computer",
+                "excerpt": "Step-by-step instructions for configuring and switching between multiple GitHub accounts on a single machine.",
+                "link": "www.4biddencoder.tech"
+            }
+        ]
+    }
 ]
