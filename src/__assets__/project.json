@@ -1,9 +1,18 @@
 [
     {
+        "name": "Poster-parlor",
+        "description": "A poster selling website with user authentication, cart functionality, and admin dashboard.",
+        "link": "https://poster-parlor-frontend.vercel.app",
+        "image": "../../assets/posterparlor.png",
+        "features": ["User Authentication", "Cart Functionality", "Admin Dashboard", "Product Management"],
+        "technologies": ["NextJs", "Redux", "Node.js", "Express", "MongoDB", "Cloudinary", "Nx Monorepo", "Razorpay"]
+    },
+
+    {
         "name": "Cab Management System",
         "description": "A full stack cab platform with secure role-based access, smart fare calculation, and production-ready architecture.",
         "link": "https://github.com/Myself-Pankaj/Production_Frontend/blob/master/README.md",
-        "image": "https://res.cloudinary.com/buymybook/image/upload/v1753112382/Portfolio/CabManagement_xabt5f.jpg",
+        "image": "../../assets/cabmanagement.png",
         "features": [
             "Secure Authentication",
             "Razorpay Integration",
@@ -17,7 +26,7 @@
         "name": "Academic-Assets",
         "description": "A dynamic academic platform offering notes, video lectures, Q&A, and job opportunities.",
         "link": "https://github.com/Myself-Pankaj/Academics-Asset-Frontned/blob/master/README.md",
-        "image": "https://res.cloudinary.com/buymybook/image/upload/v1753112382/Portfolio/one_mju1qe.png",
+        "image": "../../assets/accedemic-asset.png",
         "features": ["Buy Notes", "Stream Lectures", "Q&A Portal", "Job Applications"],
         "technologies": ["React", "Redux", "Framer Motion", "Sass", "Node.js"]
     },
@@ -25,7 +34,7 @@
         "name": "DocLockr",
         "description": "A secure document and note management app with project tracking and Google login.",
         "link": "https://github.com/Myself-Pankaj/Doclokr-Frontend/blob/master/README.md",
-        "image": "https://res.cloudinary.com/buymybook/image/upload/v1753112382/Portfolio/two_sjowxe.jpg",
+        "image": "../../assets/doclokr.png",
         "features": ["Note Taking", "Document Storage", "Project Management", "Google Login"],
         "technologies": ["React", "Node.js", "Express", "MongoDB", "Cloudinary"]
     },
@@ -33,7 +42,7 @@
         "name": "M-Attar Plazaa (E-commerce App)",
         "description": "A mobile perfume shopping app with OTP login, cart, and backend integration.",
         "link": "https://github.com/Myself-Pankaj/PerfumeStore-Frontend/blob/master/README.md",
-        "image": "https://res.cloudinary.com/buymybook/image/upload/v1753112341/Portfolio/four_q0kqgn.jpg",
+        "image": "../../assets/attarplazza.png",
         "features": ["OTP Authentication", "Product Browsing", "Cart Functionality", "Backend Integration"],
         "technologies": ["React Native", "Redux", "Node.js", "MongoDB"]
     }
