@@ -2,7 +2,7 @@
     {
         "year": "Mar/2023 - Present",
         "company": "Capgemini",
-        "role": "Software Engineer",
+        "role": "Sr. Software Engineer",
         "responsibilities": [
             "Architected and implemented a highly scalable service using Node.js and JavaScript, servicing over 500,000 requests daily with 99.99% uptime.",
             "Led the development of a secure OAuth2.0-based authentication mechanism, improving system security and reducing unauthorized access by 40%.",
