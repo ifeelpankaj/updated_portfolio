@@ -23,6 +23,20 @@
         "technologies": ["Vite (React)", "Node.js", "Express", "MongoDB", "Google Maps API", "Razorpay"]
     },
     {
+        "name": "BringUp",
+        "description": "BringUp is a scalable task management mobile app built with React Native (Expo) that enables users to create, assign, and track tasks efficiently with structured Inbox/Outbox views. It features Google authentication via Firebase, real-time push notifications, and automatic task categorization for streamlined workflow management.",
+        "link": "https://github.com/ifeelpankaj/Bring-Up-App/blob/master/README.md",
+        "image": "../../assets/bringuplogo.png",
+        "features": [
+            "Task Creation and Assignment",
+            "Inbox/Outbox Views",
+            "Google Authentication (Firebase)",
+            "Real-time Push Notifications",
+            "Automatic Task Categorization"
+        ],
+        "technologies": ["React Native (Expo)", "Firebase Authentication", "Firebase Cloud Messaging", "Node.js", "Express", "NextJs"]
+    },
+    {
         "name": "Academic-Assets",
         "description": "A dynamic academic platform offering notes, video lectures, Q&A, and job opportunities.",
         "link": "https://github.com/Myself-Pankaj/Academics-Asset-Frontned/blob/master/README.md",
