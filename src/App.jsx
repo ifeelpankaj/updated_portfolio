@@ -15,7 +15,12 @@ function App() {
         document.addEventListener('contextmenu', handleContextMenu);
         return () => document.removeEventListener('contextmenu', handleContextMenu);
     }, []);
-
+    React.useEffect(() => {
+        const pingServer = async () => {
+            await fetch('https://bring-up-server.onrender.com/api/v1/health');
+        };
+        pingServer();
+    }, []);
     // App.js
     React.useEffect(() => {
         document.documentElement.classList.remove('light');
