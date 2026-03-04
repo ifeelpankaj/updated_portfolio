@@ -10,11 +10,11 @@ import Blogs from './__pages__/__blogs';
 
 function App() {
     const [theme, setTheme] = React.useState('light');
-    React.useEffect(() => {
-        const handleContextMenu = (e) => e.preventDefault();
-        document.addEventListener('contextmenu', handleContextMenu);
-        return () => document.removeEventListener('contextmenu', handleContextMenu);
-    }, []);
+    // React.useEffect(() => {
+    //     const handleContextMenu = (e) => e.preventDefault();
+    //     document.addEventListener('contextmenu', handleContextMenu);
+    //     return () => document.removeEventListener('contextmenu', handleContextMenu);
+    // }, []);
     React.useEffect(() => {
         const pingServer = async () => {
             await fetch('https://bring-up-server.onrender.com/api/v1/health');

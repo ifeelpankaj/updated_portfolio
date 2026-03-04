@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 // console.log(getImage("pankaj.png"));
 const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 1, y: 20 },
     visible: (i) => ({
         opacity: 1,
         y: 0,
         transition: {
-            delay: i * 0.2,
+            delay: i * 0.02,
             duration: 0.6,
             ease: 'easeOut'
         }
@@ -35,7 +35,7 @@ const Projects = () => {
                         custom={index}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.1 }}
                         variants={cardVariants}>
                         <div
                             className="card_image"
